@@ -1,9 +1,13 @@
 plugins {
     id 'java'
+    id 'application'
+    id  'com.gradleup.shadow' version '8.3.2'
 }
 
+mainClassName = 'com.github.scogur.jrc.JRC'
+
 group = 'com.github.scogur'
-version = '1.0-SNAPSHOT'
+version = '1.0'
 
 repositories {
     mavenCentral()
@@ -17,3 +21,8 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+application {
+    mainClass = 'com.github.scogur.jrc.JRC'
+}
+
