@@ -59,7 +59,7 @@ public class JRC {
         ProcessBuilder processBuilder = new ProcessBuilder();
         // Windows
         if (System.getProperty("os.name").toLowerCase().contains("windows")){
-            processBuilder.command("pwsh.exe", "-Command", command);
+            processBuilder.command("cmd", "-C", command);
         } else {
             processBuilder.command("bash", "-c", command);
         }
