@@ -61,7 +61,7 @@ public class JRC {
         if (System.getProperty("os.name").toLowerCase().contains("windows")){
             processBuilder.command("cmd", "-C", command);
         } else {
-            processBuilder.command("bash", "-c", command);
+            processBuilder.command("sh", "-c", command);
         }
 
 
