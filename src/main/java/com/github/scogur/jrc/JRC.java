@@ -58,7 +58,12 @@ public class JRC {
     private static void alterExec(String command) {
         ProcessBuilder processBuilder = new ProcessBuilder();
         // Windows
-        processBuilder.command("pwsh.exe", "-Command", command);
+        if (System.getProperty("os.name").toLowerCase().contains("windows")){
+            processBuilder.command("pwsh.exe", "-Command", command);
+        } else {
+            processBuilder.command("bash", "-c", command);
+        }
+
 
         try {
 
